@@ -3,8 +3,8 @@
 <head>
     <title>Amodal Completion</title>
     <script src="https://unpkg.com/jspsych@7.0.0"></script>
-    <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-preload@1.0.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-browser-check@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-survey-multi-choice@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-instructions@1.0.0"></script>
@@ -41,21 +41,27 @@ var timeline = [];
   };
     timeline.push(setup_info);
 
+
  var preload_images = {
        type: jsPsychPreload,
-       images: [stimulus_path + "AmodalCompletion_MainImage.png", stimulus_path + "AmodalCompletion_LongDog.png", stimulus_path + "AmodalCompletion_TwoDogs.png", stimulus_path + "AmodalCompletion_ChoppedDog.png", stimulus_path + "AmodalCompletion_All.png"],
+       images: [stimulus_path + "AmodalCompletion_MainImage.png", stimulus_path + "AmodalCompletion_LongDog.png", stimulus_path + "AmodalCompletion_TwoDogs.png", stimulus_path + "AmodalCompletion_ChoppedDog.png", stimulus_path + "TRIANGLE.png",],
        message: 'Please wait while the task loads. This may take a minute.',
     };
 
+    
+    
 // Test phase instructions
    var testInstructions = {
        type: jsPsychInstructions,
-       pages: [],
-         allow_backward: false,
+       pages: [`In this task we want to investigate how you perceive certain images. Consider the image below:<br><img src=${stimulus_path + "TRIANGLE.png"} width="200"></img>`, 
+      `When looking at this image, some people experience a white triangle without any outline sitting on top of a triangle with a black outline, as if watched from above. Transformed into a 3D figure, this interpretation of the image can be visualised like this:<br><img src=${stimulus_path + "Triangle3D.png"} width="200"></img> `,
+      `As a result, when we look at the original image, we complete the black countours and experience the presence of a triangle with a black outline:<br><img src=${stimulus_path + "Triangle_Completed.png"} width="200"></img>`,
+      `In this task we are interested in investigating how you perceive similar images where a part of one object is occluded by another object`],
+         allow_backward: true,
          show_clickable_nav: true,
          button_label_next: ['Continue']
     };
-    //timeline.push(testInstructions);
+  timeline.push(testInstructions);
 
 
     const predominant_perception = {
