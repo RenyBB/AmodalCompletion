@@ -51,20 +51,21 @@ var timeline = [];
          show_clickable_nav: true,
          button_label_next: ['Continue']
     };
-    timeline.push(testInstructions);
+    //timeline.push(testInstructions);
 
 
-        const slidertrial = {
+    const predominant_perception = {
             type: jsPsychSurveyLikert,
             questions: [
-              {prompt: [`Observe this image. What would you see if you remove the orange rectangle?  <img src=[stimulus_path.concat("AmodalCompletion_MainImage.png")]</img>`],
-              name: `amodal_1`,
-              labels: ['<img src=[stimulus_path.concat("AmodalCompletion_MainImage.png")]></img>', '<img src=[stimulus_path.concat("AmodalCompletion_MainImage.png")]></img>', '<img src=[stimulus_path.concat("AmodalCompletion_MainImage.png")]></img>']
-              ]
+              {prompt: [`Observe this image. What would you see if you remove the orange rectangle?<br><img src=${stimulus_path + "AmodalCompletion_MainImage.png"} width="300"></img>`],
+              name: 'amodal_1',
+              labels: [`<img src=${stimulus_path + "AmodalCompletion_LongDog.png"} width="200"></img>`, `<img src=${stimulus_path + "AmodalCompletion_TwoDogs.png"} width="200"></img>`, `<img src=${stimulus_path + "AmodalCompletion_ChoppedDog.png"} width="200"></img>`]
+        }],
+        scale_width: 900
          
 };
             
- timeline.push(slidertrial);
+ timeline.push(predominant_perception);
   // Run the experiment
   jsPsych.run(timeline);
 
