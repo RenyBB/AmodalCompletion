@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amodal Completion</title>
+    <script src="https://unpkg.com/jspsych@7.0.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.0.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-browser-check@1.0.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-multi-choice@1.0.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-instructions@1.0.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.0.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-likert@1.0.0"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/jspsych@7.0.0/css/jspsych.css">
+    <link rel="stylesheet" href="https://unpkg.com/@jspsych/plugin-survey@0.1.1/css/survey.css">
+
+</head>
+<body>
+    <style>
+    </style>
+</body>
+<script>
+
+  // initialize jsPsych
+  // NB: remove data display from final version! */
+  var jsPsych = initJsPsych({
+    use_webaudio: false,
+    on_finish: function () {
+       //jsPsych.data.displayData();
+    }
+  });
+
+
+var timeline = [];
+
+ var stimulus_path = "Stimuli/";
+
+  // Collect system information
+  var setup_info = {
+    type: jsPsychBrowserCheck
+  };
+    timeline.push(setup_info);
+
+
+
+// Test phase instructions
+   var testInstructions = {
+       type: jsPsychInstructions,
+       pages: [],
+         allow_backward: false,
+         show_clickable_nav: true,
+         button_label_next: ['Continue']
+    };
+    //timeline.push(testInstructions);
+
+
+    const predominant_perception = {
+            type: jsPsychSurveyLikert,
+            questions: [
+              {prompt: [`Observe this image. What would you see if you remove the orange rectangle?<br><img src=${stimulus_path + "AmodalCompletion_MainImage.png"} width="300"></img>`],
+              name: 'amodal_1',
+              labels: [`<img src=${stimulus_path + "AmodalCompletion_LongDog.png"} width="200"></img>`, `<img src=${stimulus_path + "AmodalCompletion_TwoDogs.png"} width="200"></img>`, `<img src=${stimulus_path + "AmodalCompletion_ChoppedDog.png"} width="200"></img>`]
+        }],
+        scale_width: 900
+         
+};
+
+
+const switching_perception = {
+            type: jsPsychSurveyMultiChoice,
+            questions: [
+              {prompt: [`Can you switch between the different interpretations of the image?<br><img src=${stimulus_path + "All.png"} width="700"></img>`],
+              name: 'switching_perception',
+              options: ['I can see the image in just one way', 'I can switch between 1 and 2', 'I can switch between 1 and 3', 'I can switch between 2 and 3', 'I can switch between all three interpretations']
+        }]         
+};
+
+            
+ timeline.push(predominant_perception, switching_perception);
+  // Run the experiment
+  jsPsych.run(timeline);
+
+</script>
+</html>
