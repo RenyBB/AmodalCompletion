@@ -63,7 +63,13 @@ var timeline = [];
     };
   timeline.push(testInstructions);
 
-
+    
+        const initial_display = {
+            type: jsPsychImageButtonResponse,
+            stimulus:  [`Observe this image and think about what you would see if you remove the orange rectangle.<br><img src=${stimulus_path + "AmodalCompletion_MainImage.png"} width="300"></img>`],
+            choices: ['Continue']       
+};
+    
     const predominant_perception = {
             type: jsPsychSurveyLikert,
             questions: [
@@ -86,7 +92,7 @@ const switching_perception = {
 };
 
             
- timeline.push(predominant_perception, switching_perception);
+ timeline.push(initial_display, predominant_perception, switching_perception);
   // Run the experiment
   jsPsych.run(timeline);
 
