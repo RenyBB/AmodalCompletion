@@ -58,10 +58,10 @@ var timeline = [];
 // Test phase instructions
    const testInstructions = {
        type: jsPsychInstructions,
-       pages: [`In this task we want to investigate how you perceive certain images. Consider the image below:<br><img src=${stimulus_path + "amodal_completion_example.png"} width="300"></img>`, 
-      `When looking at this image, some people experience this as a circle hidden by a square:<br><img src=${stimulus_path + "amodal_completion_example_exp1.png"} width="300"></img> `,
-      `However, the images is compatible with it not being a circle but a circle with a chunk removed as illustrated here:<br><img src=${stimulus_path + "amodal_completion_example_exp2.png"} width="300"></img> `,
-      `In this task we are interested in investigating how you perceive similar images where a part of one object is occluded by another object`],
+       pages: [`In this task we want to investigate how you experience certain images. Consider the image below:<br><img src=${stimulus_path + "amodal_completion_example.png"} width="300"></img>`, 
+      `When looking at that image, some people experience it as a circle hidden by a square as illustrated here:<br><img src=${stimulus_path + "amodal_completion_example_exp1.png"} width="300"></img> `,
+      `However, that image is also compatible with it being a circle with a chunk removed beside a square as illustrated here:<br><img src=${stimulus_path + "amodal_completion_example_exp2.png"} width="300"></img> `,
+      `In this task we are interested in investigating how you experience similar images where a part of one object is occluded by another object.`],
          allow_backward: true,
          show_clickable_nav: true,
          button_label_next: ['Continue']
@@ -72,14 +72,14 @@ var timeline = [];
 // Cat unconstrained    
    const initial_display = {
             type: jsPsychHtmlButtonResponse,
-            stimulus:  [`Observe this image and think about what you would see if you remove the red square.<br><img src=${stimulus_path + "cat_amodal.png"} width="300"></img>`],
+            stimulus:  [`Observe this image and think about how you experience the cat.<br><img src=${stimulus_path + "cat_amodal.png"} width="300"></img>`],
             choices: ['Continue']       
 };
     
     const predominant_perception = {
             type: jsPsychSurveyLikert,
             questions: [
-              {prompt: [`Observe this image. What would you see if you remove the red sqaure?<br><img src=${stimulus_path + "cat_amodal.png"} width="300"></img>`],
+              {prompt: [`Please indicate which image comes closest to how you experienced the cat.<br><img src=${stimulus_path + "cat_amodal.png"} width="300"></img>`],
               name: 'amodal_1',
               labels: [`<img src=${stimulus_path + "cat_experience1.png"} width="200"></img>`, `<img src=${stimulus_path + "cat_experience2.png"} width="200"></img>`, `<img src=${stimulus_path + "cat_experience3.png"} width="200"></img>`, `something else`]
         }],
@@ -91,7 +91,7 @@ var timeline = [];
 const switching_perception = {
             type: jsPsychSurveyMultiChoice,
             questions: [
-              {prompt: [`Can you switch between the different interpretations of the image?<br><img src=${stimulus_path + "cat_all.png"} width="700"></img>`],
+              {prompt: [`Now you have seen different options compatible with the image, can you switch between experiencing different interpretations of the image?<br><img src=${stimulus_path + "cat_all.png"} width="700"></img>`],
               name: 'switching_perception',
               options: ['I can see the image in just one way', 'I can switch between 1 and 2', 'I can switch between 1 and 3', 'I can switch between 2 and 3', 'I can switch between all three interpretations']
         }]         
@@ -104,14 +104,14 @@ const switching_perception = {
 // Dogs constrained    
    const initial_display_dog = {
             type: jsPsychHtmlButtonResponse,
-            stimulus:  [`Now observe this image and think about what you would see if you remove the red square.<br><img src=${stimulus_path + "AmodalCompletion_MainImage.png"} width="300"></img>`],
+            stimulus:  [`Now observe this image and think carefully about what you experience.<br><img src=${stimulus_path + "AmodalCompletion_MainImage.png"} width="300"></img>`], // I think we should keep "if you remove the red square"
             choices: ['Continue']       
 };
     
     const predominant_perception_dog = {
             type: jsPsychSurveyLikert,
             questions: [
-              {prompt: [`Observe this image. What would you see if you remove the red square?<br><img src=${stimulus_path + "AmodalCompletion_MainImage.png"} width="300"></img>`],
+              {prompt: [`Please indicate which image comes closest to what you experienced.<br><img src=${stimulus_path + "AmodalCompletion_MainImage.png"} width="300"></img>`],
               name: 'amodal_1',
               labels: [`<img src=${stimulus_path + "AmodalCompletion_LongDog.png"} width="200"></img>`, `<img src=${stimulus_path + "AmodalCompletion_TwoDogs.png"} width="200"></img>`, `<img src=${stimulus_path + "AmodalCompletion_ChoppedDog.png"} width="200"></img>`, `something else`]
         }],
@@ -123,7 +123,7 @@ const switching_perception = {
 const switching_perception_dog = {
             type: jsPsychSurveyMultiChoice,
             questions: [
-              {prompt: [`Can you switch between the different interpretations of the image?<br><img src=${stimulus_path + "All.png"} width="700"></img>`],
+              {prompt: [`Now you have seen different options compatible with the image, can you switch between experiencing different interpretations of the image?<br><img src=${stimulus_path + "All.png"} width="700"></img>`],
               name: 'switching_perception',
               options: ['I can see the image in just one way', 'I can switch between 1 and 2', 'I can switch between 1 and 3', 'I can switch between 2 and 3', 'I can switch between all three interpretations']
         }]         
