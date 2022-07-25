@@ -6,6 +6,7 @@
     <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-image-button-response@1.1.1"></script>
     <script src="https://unpkg.com/@jspsych/plugin-browser-check@1.0.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-preload@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-survey-multi-choice@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-instructions@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.0.0"></script>
@@ -35,13 +36,25 @@ var timeline = [];
 
  var stimulus_path = "Stimuli/";
 
+    
+    
+    
   // Collect system information
   var setup_info = {
     type: jsPsychBrowserCheck
   };
     timeline.push(setup_info);
 
-  
+
+  var preload = {
+    type: jsPsychPreload,
+    images: [stimulus_path + "All.png", stimulus_path + "AmodalCompletion_ChoppedDog.png", stimulus_path + "AmodalCompletion_LongDog.png", stimulus_path + "AmodalCompletion_MainImage.png", stimulus_path + "AmodalCompletion_TwoDogs.png",
+            stimulus_path + "cat_all.png", stimulus_path + "cat_amodal.png", stimulus_path + "cat_experience1.png", stimulus_path + "cat_experience2.png", stimulus_path + "cat_experience3.png",
+            stimulus_path + "amodal_completion_example1.png", stimulus_path + "amodal_completion_example1_exp1.png", stimulus_path + "amodal_completion_example1_exp2.png"],
+    show_detailed_errors: true
+}
+  timeline.push(preload);
+
     
 // Test phase instructions
    const testInstructions = {
