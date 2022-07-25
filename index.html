@@ -92,14 +92,14 @@ const switching_perception = {
 // Dogs constrained    
    const initial_display_dog = {
             type: jsPsychHtmlButtonResponse,
-            stimulus:  [`Now observe this image and think about what you would see if you remove the orangle square.<br><img src=${stimulus_path + "AmodalCompletion_MainImage.png"} width="300"></img>`],
+            stimulus:  [`Now observe this image and think about what you would see if you remove the red square.<br><img src=${stimulus_path + "AmodalCompletion_MainImage.png"} width="300"></img>`],
             choices: ['Continue']       
 };
     
     const predominant_perception_dog = {
             type: jsPsychSurveyLikert,
             questions: [
-              {prompt: [`Observe this image. What would you see if you remove the orange square?<br><img src=${stimulus_path + "AmodalCompletion_MainImage.png"} width="300"></img>`],
+              {prompt: [`Observe this image. What would you see if you remove the red square?<br><img src=${stimulus_path + "AmodalCompletion_MainImage.png"} width="300"></img>`],
               name: 'amodal_1',
               labels: [`<img src=${stimulus_path + "AmodalCompletion_LongDog.png"} width="200"></img>`, `<img src=${stimulus_path + "AmodalCompletion_TwoDogs.png"} width="200"></img>`, `<img src=${stimulus_path + "AmodalCompletion_ChoppedDog.png"} width="200"></img>`, `something else`]
         }],
