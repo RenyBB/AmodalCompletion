@@ -66,16 +66,16 @@ var timeline = [];
     
         const initial_display = {
             type: jsPsychImageButtonResponse,
-            stimulus:  [`Observe this image and think about what you would see if you remove the orange rectangle.<br><img src=${stimulus_path + "AmodalCompletion_MainImage.png"} width="300"></img>`],
+            stimulus:  [`Observe this image and think about what you would see if you remove the orange rectangle.<br><img src=${stimulus_path + "cat_amodal.png"} width="300"></img>`],
             choices: ['Continue']       
 };
     
     const predominant_perception = {
             type: jsPsychSurveyLikert,
             questions: [
-              {prompt: [`Observe this image. What would you see if you remove the orange rectangle?<br><img src=${stimulus_path + "AmodalCompletion_MainImage.png"} width="300"></img>`],
+              {prompt: [`Observe this image. What would you see if you remove the red sqaure?<br><img src=${stimulus_path + "cat_amodal.png"} width="300"></img>`],
               name: 'amodal_1',
-              labels: [`<img src=${stimulus_path + "AmodalCompletion_LongDog.png"} width="200"></img>`, `<img src=${stimulus_path + "AmodalCompletion_TwoDogs.png"} width="200"></img>`, `<img src=${stimulus_path + "AmodalCompletion_ChoppedDog.png"} width="200"></img>`]
+              labels: [`<img src=${stimulus_path + "cat_experience1.png"} width="200"></img>`, `<img src=${stimulus_path + "cat_experience2.png"} width="200"></img>`, `<img src=${stimulus_path + "cat_experience3.png"} width="200"></img>`, `something else`]
         }],
         scale_width: 900
          
@@ -85,7 +85,7 @@ var timeline = [];
 const switching_perception = {
             type: jsPsychSurveyMultiChoice,
             questions: [
-              {prompt: [`Can you switch between the different interpretations of the image?<br><img src=${stimulus_path + "All.png"} width="700"></img>`],
+              {prompt: [`Can you switch between the different interpretations of the image?<br><img src=${stimulus_path + "cat_all.png"} width="700"></img>`],
               name: 'switching_perception',
               options: ['I can see the image in just one way', 'I can switch between 1 and 2', 'I can switch between 1 and 3', 'I can switch between 2 and 3', 'I can switch between all three interpretations']
         }]         
