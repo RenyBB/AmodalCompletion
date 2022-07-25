@@ -98,8 +98,7 @@ const predominant_perception_free_text_amodal1 = {
 const if_node_other_option_amodal1 = {
     timeline: [predominant_perception_free_text_amodal1],
     conditional_function: function () {
-        if (jsPsych.data.get().last(1).values()[0].response["amodal_1"] == 3}
-		}) {  /*evaluates respose on vicarious pain question*/
+        if (jsPsych.data.get().last(1).values()[0].response["amodal_1"] == 3) {  /*evaluates respose on vicarious pain question*/
             return true; /*if participant experienced pain, ask additional questions*/
         } else {
             return false; /*if participant didn't experience pain, skil additional questions*/
@@ -150,8 +149,7 @@ const switching_perception = {
 const if_node_other_option_amodal2 = {
     timeline: [predominant_perception_free_text_amodal2],
     conditional_function: function () {
-        if (jsPsych.data.get().last(1).values()[0].response["amodal_2"] == 3}
-		}) {  /*evaluates respose on vicarious pain question*/
+        if (jsPsych.data.get().last(1).values()[0].response["amodal_2"] == 3){  /*evaluates respose on vicarious pain question*/
             return true; /*if participant experienced pain, ask additional questions*/
         } else {
             return false; /*if participant didn't experience pain, skil additional questions*/
