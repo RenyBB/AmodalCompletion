@@ -48,11 +48,11 @@ var timeline = [];
 
   var preload = {
     type: jsPsychPreload,
-    images: [stimulus_path + "All.png", stimulus_path + "AmodalCompletion_ChoppedDog.png", stimulus_path + "AmodalCompletion_LongDog.png", stimulus_path + "AmodalCompletion_MainImage.png", stimulus_path + "AmodalCompletion_TwoDogs.png", stimulus_path + "all_cats_straight_version.png", stimulus_path + "cat_occluded.png", stimulus_path + "cat_straight_tail.png", stimulus_path + "cat_curved_tail.png", stimulus_path + "cat_no_tail.png", stimulus_path + "amodal_completion_example.png", stimulus_path + "amodal_completion_example_exp1.png", stimulus_path + "amodal_completion_example_exp2.png"],
+    images: [stimulus_path + "All.png", stimulus_path + "AmodalCompletion_ChoppedDog.png", stimulus_path + "AmodalCompletion_LongDog.png", stimulus_path + "AmodalCompletion_MainImage.png", stimulus_path + "AmodalCompletion_TwoDogs.png", stimulus_path + "all_cats_straigh_version.png", stimulus_path + "cat_occluded.png", stimulus_path + "cat_straight_tail.png", stimulus_path + "cat_curved_tail.png", stimulus_path + "cat_no_tail.png", stimulus_path + "amodal_completion_example.png", stimulus_path + "amodal_completion_example_exp1.png", stimulus_path + "amodal_completion_example_exp2.png"],
     show_detailed_errors: true,
     message: 'Please wait while the task loads. This may take a minute.',
 }
- // timeline.push(preload);
+ timeline.push(preload);
 
     
 // Test phase instructions
@@ -89,7 +89,7 @@ var timeline = [];
 const predominant_perception_free_text_amodal1 = {
             type: jsPsychSurveyText,
             questions: [
-              {prompt: [`Please briefly describe how you experienced the image.<br><img src=${stimulus_path + "cat_amodal.png"} width="300"></img>`],
+              {prompt: [`Please briefly describe how you experienced the image.<br><img src=${stimulus_path + "cat_occluded.png"} width="300"></img>`],
               name: 'amodal_1_free_text',
             }],
          
