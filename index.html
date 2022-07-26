@@ -48,7 +48,7 @@ var timeline = [];
 
   var preload = {
     type: jsPsychPreload,
-    images: [stimulus_path + "All.png", stimulus_path + "AmodalCompletion_ChoppedDog.png", stimulus_path + "AmodalCompletion_LongDog.png", stimulus_path + "AmodalCompletion_MainImage.png", stimulus_path + "AmodalCompletion_TwoDogs.png", stimulus_path + "cat_all.png", stimulus_path + "cat_amodal.png", stimulus_path + "cat_experience1.png", stimulus_path + "cat_experience2.png", stimulus_path + "cat_experience3.png", stimulus_path + "amodal_completion_example.png", stimulus_path + "amodal_completion_example_exp1.png", stimulus_path + "amodal_completion_example_exp2.png"],
+    images: [stimulus_path + "All.png", stimulus_path + "AmodalCompletion_ChoppedDog.png", stimulus_path + "AmodalCompletion_LongDog.png", stimulus_path + "AmodalCompletion_MainImage.png", stimulus_path + "AmodalCompletion_TwoDogs.png", stimulus_path + "all_cats_straight_version.png", stimulus_path + "cat_occluded.png", stimulus_path + "cat_straight_tail.png", stimulus_path + "cat_curved_tail.png", stimulus_path + "cat_no_tail.png", stimulus_path + "amodal_completion_example.png", stimulus_path + "amodal_completion_example_exp1.png", stimulus_path + "amodal_completion_example_exp2.png"],
     show_detailed_errors: true,
     message: 'Please wait while the task loads. This may take a minute.',
 }
@@ -72,16 +72,16 @@ var timeline = [];
 // Cat unconstrained    
    const initial_display = {
             type: jsPsychHtmlButtonResponse,
-            stimulus:  [`Observe this image and think about how you experience the cat.<br><img src=${stimulus_path + "cat_amodal.png"} width="300"></img>`],
+            stimulus:  [`Observe this image and think about how you experience the cat.<br><img src=${stimulus_path + "cat_occluded.png"} width="300"></img>`],
             choices: ['Continue']       
 };
     
     const predominant_perception = {
             type: jsPsychSurveyLikert,
             questions: [
-              {prompt: [`Please indicate which image comes closest to how you experienced the cat.<br><img src=${stimulus_path + "cat_amodal.png"} width="300"></img>`],
+              {prompt: [`Please indicate which image comes closest to how you experienced the cat.<br><img src=${stimulus_path + "cat_occluded.png"} width="300"></img>`],
               name: 'amodal_1',
-              labels: [`<img src=${stimulus_path + "cat_experience1.png"} width="200"></img>`, `<img src=${stimulus_path + "cat_experience2.png"} width="200"></img>`, `<img src=${stimulus_path + "cat_experience3.png"} width="200"></img>`, `something else`]
+              labels: [`<img src=${stimulus_path + "cat_straight_tail.png"} width="200"></img>`, `<img src=${stimulus_path + "cat_curved_tail.png"} width="200"></img>`, `<img src=${stimulus_path + "cat_no_tail.png"} width="200"></img>`, `something else`]
         }],
         scale_width: 900
          
@@ -109,7 +109,7 @@ const if_node_other_option_amodal1 = {
 const switching_perception = {
             type: jsPsychSurveyMultiChoice,
             questions: [
-              {prompt: [`Now you have seen different options compatible with the image, can you switch between experiencing different interpretations of the image?<br><img src=${stimulus_path + "cat_all.png"} width="700"></img>`],
+              {prompt: [`Now you have seen different options compatible with the image, can you switch between experiencing different interpretations of the image?<br><img src=${stimulus_path + "all_cats_straigh_version.png"} width="700"></img>`],
               name: 'switching_perception',
               options: ['I can see the image in just one way', 'I can switch between 1 and 2', 'I can switch between 1 and 3', 'I can switch between 2 and 3', 'I can switch between all three interpretations']
         }]         
